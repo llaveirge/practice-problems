@@ -12,47 +12,46 @@
   if key exists then add 1 for every letter encounter.
   return object. */
 
-  const multipleLetterCount = (str) => {
-    let letterCountObj = {};
+  const multipleLetterCount1 = (str) => {
+    const letterCountObj = {};
 
-    for(let i = 0; i < str.length; i++) {
-        if(letterCountObj[str[i]] === undefined) {
-         letterCountObj[str[i]] = 1;
-         } else {letterCountObj[str[i]]++;
-      }
+    for (let i = 0; i < str.length; i++) {
+      if (letterCountObj[str[i]] === undefined) {
+        letterCountObj[str[i]] = 1;
+      } else { letterCountObj[str[i]]++; }
     }
+
     return letterCountObj;
   }
 
-  console.log('multiple letter count 1:', multipleLetterCount('pretty awwweeeesome!'));
+  console.log('multiple letter count #1:', multipleLetterCount1('pretty awwweeeesome!'));
 
-  //refactor into for...of loop:
+  // Refactor into for...of loop:
+  const multipleLetterCount2 = (str) => {
+    const letterCountObj = {};
 
-   const multipleLetterCount1 = (str) => {
-    let letterCountObj = {};
-
-    for(let curChar of str) {
-        if(letterCountObj[curChar] === undefined) {
-         letterCountObj[curChar] = 1;
-         } else {letterCountObj[curChar]++;
-      }
+    for (let curChar of str) {
+      if (!letterCountObj[curChar]) {
+        letterCountObj[curChar] = 1;
+      } else { letterCountObj[curChar]++; }
     }
+
     return letterCountObj;
   }
 
-  console.log('multiple letter count 2:', multipleLetterCount1('pretty awwweeeesome!'));
+  console.log('multiple letter count #2:', multipleLetterCount2('pretty awwweeeesome!'));
 
   // Third possible solution:
+  function multipleLetterCount3(str){
+    const letterCountObj = {};
 
-  function multipleLetterCount2(str){
-    let finalObj = {};
-    for(let i =0; i< str.length; i++){
-      if (!(str[i] in finalObj)){
-        finalObj[str[i]] = 1;
-      } else {
-        finalObj[str[i]]++;
-      }
+    for (let i = 0; i < str.length; i++) {
+      if (!(str[i] in letterCountObj)) {
+        letterCountObj[str[i]] = 1;
+      } else { letterCountObj[str[i]]++; }
     }
-    return finalObj;
+
+    return letterCountObj;
   }
-  console.log('multiple letter count 3:', multipleLetterCount2('pretty awwweeeesome!'));
+
+  console.log('multiple letter count #3:', multipleLetterCount3('pretty awwweeeesome!'));
