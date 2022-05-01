@@ -26,6 +26,14 @@
   return count;
   }
 
-  console.log(letterCount("Your theory is crazy, but it's not crazy enough to be true.", 'a'));
-  console.log(letterCount('LOVE truth, and pardon ERROR without judgement.', 'E'));
-  console.log(letterCount('Fantastic', 'v'));
+  console.log(`String: Your theory is crazy, but it's not crazy enough to be true.
+   Letter: a
+   letterCount = ${letterCount("Your theory is crazy, but it's not crazy enough to be true.", 'a')}`);
+
+  console.log(`String: LOVE truth, and pardon ERROR without judgement.
+   Letter: E
+   letterCount = ${letterCount('LOVE truth, and pardon ERROR without judgement.', 'E')}`);
+
+  console.log(`String: Fantastic.
+   Letter: v
+   letterCount = ${letterCount('Fantastic.', 'v')}`);
