@@ -17,7 +17,7 @@
     const cleanArr = str.toLowerCase().split(' ').join('').split('');
 
     for (let i = 0; i < cleanArr.length; i++){
-      if (cleanArr[i] !== cleanArr[cleanArr.length-(1+i)]){
+      if (cleanArr[i] !== cleanArr[cleanArr.length - (1 + i)]) {
         return false;
       }
     }
@@ -33,10 +33,10 @@
 
   const isPalindrome2 = (str) => {
 
-  const palinCombined =str.replaceAll(' ','').toLowerCase();
+  const palinCombined = str.replaceAll(' ','').toLowerCase();
 
-    for (let i=0; i<palinCombined.length; i++){
-      if (palinCombined[i] !== palinCombined[palinCombined.length -1 - i]) {
+    for (let i = 0; i < palinCombined.length; i++){
+      if (palinCombined[i] !== palinCombined[palinCombined.length - 1 - i]) {
         return false}
       }
     return true;
