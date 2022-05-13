@@ -1,7 +1,9 @@
 // slice-end
 
 /* TASK:
-  Create a function named 'sliceEnd' which accepts two parameters: 'array' and 'slicedQty'
+  'sliceEnd' which accepts two parameters: 'array' and 'slicedQty', and returns
+  a copy of the original array with the 'slicedQty' quantity of indexes removed
+  from the end of original array.
 
   input: array, output: array
 
