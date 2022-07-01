@@ -1,19 +1,18 @@
 // greeting-switchboard: switch statement practice
 /*TASK:
-  Write a function that utilizes swtich statements in place of if, else
+  Write a function that utilizes switch statements in place of if, else
   statements. Create a greeting switchboard that assigns different greetings to
-  numerical numbers.
+  numerical values.
 
   input: numerical values, output: corresponding greeting in string format.
 
   Psuedo code:
-    define a function named switchboard which accpets one parameter, 'selection'
+    define a function named switchboard which accepts one parameter, 'selection'
     a numerical value.
     assign an empty string to the variable 'greeting'
     write a switch statement that accepts the 'selection' parameter, and write
     several cases based on the numerical values.
     return the greeting associated with the value of 'selection'
-
 */
 
 function switchboard(selection) {
@@ -23,7 +22,7 @@ function switchboard(selection) {
     return 'error: please enter a value between 1 and 7';
   }
 
-  switch (selection) {
+  switch ( selection ) {
     case 1:
       greeting = 'hello';
       break;
@@ -50,8 +49,8 @@ function switchboard(selection) {
   return greeting;
 }
 
-console.log( `Hello in English is ${switchboard(1)}!`);
-console.log( `Hello in French is ${switchboard(3)}!`);
-console.log( `Hello in Serbian is ${switchboard(9)}!`);
-console.log( `Hello in Turkish is ${switchboard(6)}!`);
-console.log( `Hello in Turkish is ${switchboard(-4)}!`);
+console.log( `Hello in English is ${switchboard(1)}!` );
+console.log( `Hello in French is ${switchboard(3)}!` );
+console.log( `Hello in Serbian is ${switchboard(9)}!` );
+console.log( `Hello in Turkish is ${switchboard(6)}!` );
+console.log( `Hello in Turkish is ${switchboard(-4)}!` );
