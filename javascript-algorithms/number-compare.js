@@ -1,11 +1,11 @@
 //numberCompare
 
-/* TASK this function takes in two parameters (both numbers). If the first is
-  greater than the second, this function returns "First is greater".
-  If the second number is greater than the first, the function returns "Second
-  is greater". Otherwise the function returns "Numbers are equal"
+/* TASK - This function takes in two parameters (both numbers). If the first is
+  greater than the second, this function returns 'First is greater'.
+  If the second number is greater than the first, the function returns 'Second
+  is greater'. Otherwise the function returns 'Numbers are equal'.
 
-  input: two numbers, output: strings
+  input: two numbers, output: a string
 
   Pseudo code:
   Define a function named numberCompare that accepts two number value
