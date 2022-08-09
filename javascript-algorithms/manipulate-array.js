@@ -29,22 +29,22 @@
     If command is add, but value is undefined, 'please enter value'. */
 
   function manipulateArray(arr, command, location, value) {
-   if (arguments.length < 3) return 'Please enter all necessary arguments.'
+   if (arguments.length < 3) return `Please enter all necessary arguments`;
 
     const cleanLocation = location.toLowerCase();
     const cleanCommand = command.toLowerCase();
 
     // Verify arguments are valid:
     if (cleanCommand !== 'add' && cleanCommand !== 'remove') {
-      return('Please enter "add" or "remove"');
+      return(`Please enter 'add' or 'remove'`);
     }
 
     if (cleanLocation !== 'beginning' && cleanLocation !== 'end') {
-      return 'Please enter "beginning" or "end"';
+      return `Please enter 'beginning' or 'end'`;
     }
 
     if (cleanCommand === 'add' && value === undefined) {
-      return 'Please enter a value.';
+      return `Please enter a value`;
     }
 
     // Remove and Add command functionality:
@@ -66,3 +66,4 @@
   console.log('test 4', manipulateArray(['alice', 'gerald', 'doug', 'linda'],'add','beginning', 'donna'));
   console.log('test 5', manipulateArray(['alice', 'gerald', 'doug', 'linda'], 'end', 'marla'));
   console.log('test 6', manipulateArray(['alice', 'gerald', 'doug', 'linda'], 'remove'));
+  console.log('test 7', manipulateArray(['alice', 'gerald', 'doug', 'linda'], 'add', 'james'));
