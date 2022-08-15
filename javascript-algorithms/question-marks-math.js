@@ -35,34 +35,26 @@
     let res = false;
     for (let i = 0; i <str.length; i++) {
       for (let j = i+1; j < str.length; j++) {
-        console.log('i value', i, str[i]);
-        console.log('j value', j, str[j]);
 
         if (Number(str[i]) + Number(str[j]) === 10) {
           res = true;
           //Check for false positives:
-          console.log('Sliced:', str.slice(i,j).split("?"));
           const sliceArr = str.slice(i,j).split("?");
 
           if (sliceArr.length -1 < 3 || sliceArr.length > 4) {
-            console.log('too many or too few indexes');
             res = false;
             break;
           }
 
           for (let k = 1; k < sliceArr[0].length; k++) {
             if (Number(sliceArr[0][k])) {
-              console.log(Number(sliceArr[0][k]));
-              console.log('more than one number in an index')
               res = false;
               break;
             }
           }
-
         }
 
         if (res === true) {
-          console.log('HERE');
           return true;
         }
       }
