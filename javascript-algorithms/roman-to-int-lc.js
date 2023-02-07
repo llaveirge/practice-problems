@@ -24,59 +24,58 @@
   Input: string character, output: integer
 
   Pseudo Code:
+  - Create an object containing roman numeral values
   - Verify it is a valid roman numeral including only the allowed characters
   - Initialize a counter variable at 0
-  - Iterate through the string and add the appropriate values to the counter
-  variable and:
-    - if the character is an I, X, or C - check if the following character is
-    one that can initiate subtraction and do so by altering the value to add
+  - Iterate through the string and:
+    - assign the of the current string index value property of the numeralValue
+    object to the variable 'cur'
+    - add 1 to the current string index value and assign that property of the
+    numeralValue object to the variable 'next'
+    - if the value of cur is less than the value of next, we know we have to
+    subtract cur from next and add the result of that expression to the
+    counter variable
+      - then increment i by one to skip the next index of s in the for loop
+      since it was factored into the subtraction expression
+    - the value of cur is not less than next, then add that value to the counter
+    variable
   - Return the integer at the end of the iteration.
 */
 
 const romanToInt = s => {
-  let counter = 0;
 
-  for (char of s) {
+  const numeralValues = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+  }
 
-    if (char !== 'X' && char !== 'I' && char !== 'C' && char !== 'V' && char !== 'M' && char !== 'L' && char !== 'D') {
-      return 'Please enter a valid roman numeral.';
-    };
-  };
-
-  for (let i = 0; i < s.length; i++) {
-
-    if (s[i] === 'I') {
-      counter++;
-    };
-
-    if (s[i] === 'V') {
-      s[i - 1] === 'I' ? counter += 3 : counter += 5;
+  for (let char of s ) {
+    if (char in numeralValues === false) {
+      return 'Please enter a valid roman numeral.'
     }
+  }
 
-    if (s[i] === 'X') {
-      s[i - 1] === 'I' ? counter += 8 : counter += 10;
-    };
+  let counter = 0;
+  for (let i = 0; i < s.length; i++){
+    let cur = numeralValues[s[i]];
+    let next = numeralValues[s[i+1]];
 
-    if (s[i] === 'L') {
-      s[i - 1] === 'X' ? counter += 30 : counter += 50;
-    };
-
-    if (s[i] === 'C') {
-      s[i - 1] === 'X' ? counter += 80 : counter += 100;
-    };
-
-    if (s[i] === 'D') {
-      s[i - 1] === 'C' ? counter += 300 : counter += 500;
-    };
-
-    if (s[i] === 'M') {
-      s[i - 1] === 'C' ? counter += 800 : counter += 1000;
-    };
-  };
+    if (cur < next) {
+      counter += next - cur;
+      i++;
+    } else {
+      counter += cur;
+    }
+  }
 
   return counter;
 };
 
-const s = 'X'
+const s = 'I'
 console.log('Roman Numeral = ', s);
 console.log('Integer = ', romanToInt(s));
